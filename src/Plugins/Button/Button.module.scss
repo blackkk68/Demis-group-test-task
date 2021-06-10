@@ -16,11 +16,29 @@
         font-size: 0.75rem;
         background: #be1116;
         border: 2px solid #be1116;
-        transition: background 0.2s ease-in-out, color 0.1s ease-in-out;
+        transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
 
         &:hover {
             background: white;
             color: #be1116;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .Button {
+        button {
+            transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
+
+            &:hover {
+                background: #be1116;
+                color: white;
+            }
+
+            &:active {
+                background: white;
+                color: #be1116;
+            }
         }
     }
 }
