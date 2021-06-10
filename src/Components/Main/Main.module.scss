@@ -1,0 +1,16 @@
+.Main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .Main {
+        justify-content: flex-start;
+        gap: 25px;
+        background: #eeeee7;
+    }
+}

@@ -1,0 +1,78 @@
+.NewsBlock {
+    width: auto;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    box-shadow: 0 0 3px 1px #c9c9c3;
+    background: white;
+    display: flex;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-grow: 1;
+
+        li {
+            padding: 10px;
+            border-right: 1px solid #c9c9c3;
+            cursor: pointer;
+            transition: background 0.2s ease-in-out;
+            flex-grow: 1;
+
+            &:hover {
+                background: lighten(#c9c9c3, 15%);
+            }
+
+            h3 {
+                font-size: 0.8rem;
+                margin: 0;
+            }
+
+            span {
+                font-size: 0.65rem;
+            }
+        }
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+
+        button {
+            align-self: center;
+            cursor: pointer;
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            font-family: inherit;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.6rem;
+            background: #be1116;
+            border: 2px solid #be1116;
+            transition: background 0.2s ease-in-out, color 0.1s ease-in-out;
+
+            &:hover {
+                background: white;
+                color: #be1116;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .NewsBlock {
+        margin: 10px;
+        position: initial;
+        flex-direction: column;
+
+        ul {
+            border-bottom: 1px solid #c9c9c3;
+        }
+    }
+}

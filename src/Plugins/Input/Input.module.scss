@@ -1,0 +1,98 @@
+.Input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .placeholder {
+        position: absolute;
+        left: 15px;
+        top: 10px;
+        font-size: 0.7rem;
+        font-family: inherit;
+        color: #999991;
+        transition: all 0.2s ease-in-out;
+
+        &.focused {
+            top: -17px;
+            left: 0;
+            color: #94090d;
+            font-size: 0.65rem;
+        }
+    }
+
+    .errorMessage {
+        font-size: 0.6rem;
+        color: #94090d;
+        visibility: hidden;
+
+        &.show {
+            visibility: visible;
+        }
+    }
+
+    input {
+        width: 100%;
+        outline: none;
+        border: none;
+        padding: 10px;
+        padding-left: 15px;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        font-family: inherit;
+        box-shadow: 0 1px 0 0 #c9c9c3;
+        box-sizing: border-box;
+
+        &.invalid {
+            outline: 2px solid #94090d;
+        }
+    }
+
+    label {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            background: #94090d;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            transition: width 0.2s ease-in-out;
+        }
+
+        &.focused::after {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .Input {
+        .placeholder {
+            &.focused {
+                top: -15px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .Input {
+        .placeholder {
+            &.focused {
+                top: -13px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .Input {
+        .placeholder {
+            &.focused {
+                top: -12px;
+            }
+        }
+    }
+}

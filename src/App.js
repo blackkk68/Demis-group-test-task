@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.scss';
+import Main from './Components/Main/Main';
+import News from './Components/News/News';
+import NewsItem from './Components/NewsItem/NewsItem';
+import { Route, Switch } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function App() {
+  const history = useHistory();
+  const [currentNewsItem, setCurrentNewsItem] = useState(null);
+
+  function goToNewsItem(item) {
+    setCurrentNewsItem(item);
+    history.push(`/news/${item.id}`);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        {currentNewsItem
+          ? <Route exact path={`/news/${currentNewsItem.id}`} render={() => <NewsItem item={currentNewsItem} />} />
+          : null}
+        <Route exact path='/news' render={() => <News goToNewsItem={goToNewsItem} />} />
+        <Route exact path='/' render={() => <Main goToNewsItem={goToNewsItem} />} />
+      </Switch>
     </div>
   );
 }

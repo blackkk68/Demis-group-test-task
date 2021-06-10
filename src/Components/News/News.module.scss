@@ -1,0 +1,45 @@
+.News {
+    min-width: 320px;
+
+    h1 {
+        text-align: center;
+    }
+
+    ul {
+        width: 80%;
+        margin: 25px auto;
+        padding: 0;
+        list-style: none;
+
+        li {
+            max-height: 150px;
+            padding: 5px 10px;
+            margin: 15px 0;
+            box-shadow: 0 0 3px 1px #c9c9c3;
+            cursor: pointer;
+            transition: background 0.2s ease-in-out;
+
+            &:hover {
+                background: lighten(#c9c9c3, 15%);
+            }
+
+            span {
+                display: block;
+                font-size: 0.8rem;
+                text-align: right;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+                margin: 0;
+            }
+
+            p {
+                font-size: 0.8rem;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+}
