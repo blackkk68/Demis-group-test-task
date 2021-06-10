@@ -86,13 +86,3 @@
         }
     }
 }
-
-@media (max-width: 480px) {
-    .Input {
-        .placeholder {
-            &.focused {
-                top: -12px;
-            }
-        }
-    }
-}
